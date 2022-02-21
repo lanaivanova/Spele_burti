@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vārdu spēle</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+           <h1>
+             Vārdu spēle
+            </h1>
+            <ul>
+                <li> 
+                    <a href="spele1.html">Spēle </a>
+                </li>
+                <li>
+                    <a href="rezultati.html">Tops</a>
+                </li>
+                <li> 
+                    <a href="parspeli.html">Par autoru</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="content">
+            <p>Sveiks! Ir pienācis laiks pārbaudīt sevi, tāpēc tev ir vienreizēja iespēja uzspēlēt vārdu spēli!</p>
+            <p>Kā spēlēt?</p>
+            <p>Pavisam vienkārši! Ar peles klikšķi nospied sākt spēli un ļaujies izaicinājumam! </p>
+            <p>No dotajiem vārdiem izdomā un ieraksti pareizo atbildi!</p>
+            Vārds: <input id="vards" />
+            <br />
+            Vecums: <input id="vecums" />
+            <br />
+            Reģions:
+            <select id="regions">
+                <option value="Vidzeme">Vidzeme</option>
+                <option value="Latgale">Latgale</option>
+                <option value="Kurzeme">Kurzeme</option>
+                <option value="Zemgale">Zemgale</option>
+            </select>
+
+            <button onclick="saktSpeli()"><a href=spele1.html>Sākt</a></button>
+
+             </div>
+             </div>
+             <script>
+
+                function saktSpeli() 
+                {
+                    let vards   = document.querySelector('#vards').value
+                    let vecums  = document.querySelector('#vecums').value
+                    let regions = document.querySelector('#regions').value
+                    
+                    console.log(vards)
+            
+                    if( vards=='' )
+                    {
+                        alert('Ievadi vārdu!')
+                    }
+                    else
+                    {
+                        window.location='spele1.html#'+vards+','+vecums+','+regions
+                    }
+            
+                }
+                
+                </script>
+</body>
+</html>

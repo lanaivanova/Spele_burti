@@ -1,0 +1,46 @@
+.wrapper
+{
+    background: rgb(192, 190, 190);
+    height: 350px;
+}
+h1
+{
+    text-align: center;
+    background: rgb(203, 245, 50);
+}
+ul
+{
+    text-align: center;
+}
+
+li
+{
+display: inline-block;
+}
+
+.game
+{
+    width: 3000px;
+    background: rgba(250, 249, 249, 0);
+    }
+.table
+{   display: inline-block;
+    background: rgb(203, 245, 50);
+    width: 100px;
+    height:35px;
+    border: 1px solid rgb(203, 245, 50);
+    text-align: center;
+
+
+}
+.block
+{
+    display: inline-block;
+    background: rgb(0, 255, 34);
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(3, 139, 26);
+    text-align: center;
+
+    ;
+}

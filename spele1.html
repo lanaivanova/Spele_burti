@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="style.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spele</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>
+              Vārdu spēle
+            </h1>
+            <ul>
+                <li>
+                    <a href="index.html">Sākums </a>
+                </li>
+                  <li>
+                    <a href="rezultati.html">Tops</a>
+                </li>
+                <li>
+                    <a href="parspeli.html">Par autoru </a>
+                </li>
+            </ul>
+        </div>
+<p>Sveiks,</p>
+<p>Atmini piecu burtu vārdu!</p>
+        
+        <div class="sajaukts">Šeit būs sajauktais vārds</div>   
+        <input class="atbilde" />
+        <button onclick="parbaudit()">Pārbaudīt atbildi</button>
+    
+    
+        <script>
+        let adrese = window.location.hash
+adrese = decodeURI(adrese)
+adrese = adrese.replace('#','')
+adrese = adrese.split(",")
+let vards  = adrese[0]
+document.querySelector('.virsraksts').innerHTML = 'Sveiks '+vards
+
+
+        let vardi_1   = ['LIEPA','RIEPA','DIENA','OZOLS','BĒRZS','PIEPE','ZIEDS','SIETS','PASTS','ZVANS']
+        let vardi_1_s = ['PELIA','APREI','ENADI','LOZSO','ĒSBZR','EEIPP','DEIZS','ESTIS','SAPST','NVZAS']
+    
+        setInterval(skaititLaiku, 60);
+    
+        let randomNr
+    
+        function skaititLaiku() 
+        {
+            console.log('skaititLaiku ir palaists')
+        }
+    
+    
+        function izveletiesVardu()
+        {
+            randomNr = Math.random() * 10
+            randomNr =  Math.ceil( randomNr )
+            randomNr = randomNr-1
+    
+            document.querySelector(".sajaukts").innerHTML=  sajauktVardu(vardi_1[randomNr])  +' , '+randomNr
+        
+            document.querySelector('.atbilde').value = ''
+        }
+    
+        izveletiesVardu()
+        
+    
+        function parbaudit()
+        {
+            let atbilde = document.querySelector('.atbilde').value
+    
+            if( atbilde == vardi_1[randomNr] )
+            {
+                alert('Pareizi! ')
+                izveletiesVardu()
+            }
+            else
+            {
+                alert('Nepareizi!')
+            }//beidzas if
+        }//beidzas parbaudit()
+    
+        function sajauktVardu(vards)
+        {
+            //console.log('sajauktVardu() palaists')
+            //console.log('sajaukšanai='+vards)
+    
+            let vardsIzjauksanai = vards.split('')
+    
+            let vardaGarums = vards.length
+            let loopIndex = 0
+            let sajauktsVards = []
+    
+            while( loopIndex != vardaGarums )
+            {
+                //console.log( vards[loopIndex] )
+    
+                let randomIndex = Math.floor( Math.random() * vardsIzjauksanai.length )
+    
+                sajauktsVards.push(vardsIzjauksanai[randomIndex])
+                vardsIzjauksanai.splice(randomIndex,1)
+    
+                //console.log(vardsIzjauksanai)
+    
+                loopIndex++
+            }
+    
+            console.log(sajauktsVards)
+    
+            sajauktsVards = sajauktsVards.join('')
+    
+            return sajauktsVards
+    
+        }//beidzas sajauktVardu()
+    
+    
+        </script>
+    
+    
+    </body>
+    </html>
