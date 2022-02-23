@@ -27,7 +27,7 @@
                 </li>
             </ul>
         </div>
-<p>Sveiks,</p>
+<p class="virsraksts">Sveiks,</p>
 <p>Atmini piecu burtu vārdu!</p>
         
         <div class="sajaukts">Šeit būs sajauktais vārds</div>   
@@ -36,24 +36,24 @@
     
     
         <script>
-        let adrese = window.location.hash
-adrese = decodeURI(adrese)
-adrese = adrese.replace('#','')
-adrese = adrese.split(",")
-let vards  = adrese[0]
-document.querySelector('.virsraksts').innerHTML = 'Sveiks '+vards
+        let adrese = window.location.hash;
+adrese = decodeURI(adrese);
+adrese = adrese.replace('#','');
+adrese = adrese.split(",");
+let vards  = adrese[0];
+document.querySelector('.virsraksts').innerHTML = 'Sveiks '+vards;
 
 
-        let vardi_1   = ['LIEPA','RIEPA','DIENA','OZOLS','BĒRZS','PIEPE','ZIEDS','SIETS','PASTS','ZVANS']
-        let vardi_1_s = ['PELIA','APREI','ENADI','LOZSO','ĒSBZR','EEIPP','DEIZS','ESTIS','SAPST','NVZAS']
+        let vardi_1   = ['LIEPA','RIEPA','DIENA','OZOLS','BĒRZS','PIEPE','ZIEDS','SIETS','PASTS','ZVANS'];
+        let vardi_1_s = ['PELIA','APREI','ENADI','LOZSO','ĒSBZR','EEIPP','DEIZS','ESTIS','SAPST','NVZAS'];
     
         setInterval(skaititLaiku, 60);
     
-        let randomNr
+        let randomNr;
     
         function skaititLaiku() 
         {
-            console.log('skaititLaiku ir palaists')
+            console.log('skaititLaiku ir palaists');
         }
     
     
