@@ -51,19 +51,20 @@
 
                 function saktSpeli() 
                 {
-                    let vards   = document.querySelector('#vards').value
-                    let vecums  = document.querySelector('#vecums').value
-                    let regions = document.querySelector('#regions').value
+                    let vards   = document.querySelector('#vards').value;
+                    let vecums  = document.querySelector('#vecums').value;
+                    let regions = document.querySelector('#regions').value;
                     
                     console.log(vards)
             
                     if( vards=='' )
                     {
-                        alert('Ievadi vārdu!')
+                        alert('Ievadi vārdu!');
                     }
                     else
                     {
-                        window.location='spele1.html#'+vards+','+vecums+','+regions
+                        window.mansmainigais=vards;
+                        window.location='spele1.html#'+vards+','+vecums+','+regions;
                     }
             
                 }
